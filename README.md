@@ -10,3 +10,13 @@ A WebView app. Voice input uses Android's own SpeechRecognizer and replies use A
 
 ## Or build locally
 Open this folder in Android Studio and choose Build > Build APK(s). Min Android 8.0.
+from google import genai
+
+client = genai.Client()
+
+response = client.models.generate_content(
+    model="gemini-flash-latest",
+    contents="Explain how AI works in a few words",
+)
+
+print(response.text)
